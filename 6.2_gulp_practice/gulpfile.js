@@ -7,4 +7,7 @@ gulp.task('extend',function(){
 		.pipe(gulp.dest('./app/preview'));
 });
 
-gulp.task('default',['extend']);
+gulp.task('watch',function(){
+	gulp.watch('./app/dist/*.html',['extend']);
+});
+gulp.task('default',['extend','watch']);
